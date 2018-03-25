@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="import" href="./components/meta.html?__inline"/>
+    <link rel="stylesheet" href="./less/main.less"/>
+    <script src="./js/font.js"></script>
+    <script src="./js/jquery-1.9.1.min.js"></script>
+    <title>名师课程</title>
+</head>
+<body>
+<div class="wrap wrap-bottom">
+    <div class="block b0">
+        <div class="inner">
+            <a href="javascript:void(0);" class="logo"></a>
+            <div class="title">
+                迄今为止最好的<br>在线学琴方式
+            </div>
+            <div class="text-box">
+                <p>全球首创"智能互动视频音乐教学"</p>
+            </div>
+            <img class="phone" src="images/banner-phone@1x.png" srcset="images/banner-phone@2x.png 2x, images/banner-phone@3x.png 3x" alt=""/>
+            <a class="btn-load" href="javascript:void(0);"></a>
+        </div>
+    </div>
+    <div class="block b1">
+        <div class="inner">
+            <h5>零基础<span>七天</span>学会吉他／尤克里里</h5>
+            <div class="mess-box">
+                <div class="mess-link">
+                    <p>39651<span>人</span></p>
+                    <span>毕业人数</span>
+                </div>
+                <div class="mess-link">
+                    <p>15<span>小时</span></p>
+                    <span>尤克里里毕业时间</span>
+                </div>
+                <div class="mess-link">
+                    <p>21<span>小时</span></p>
+                    <span>吉他毕业时间</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block b2">
+        <div class="inner">
+            <div class="link" data-id="0">
+                <h3>智能互动的教学方式</h3>
+                <p><span>即时反馈+边学边练</span>全球首创的"智能互动音乐教学",先进的乐音识别反馈；
+                    即时反馈学生的弹奏情况。闯关解锁的互动方式，让学员边学边练，达到学完就能弹的效果。</p>
+                <div class="video-box">
+                    <video controls="controls" class="vd" id="vd-0">
+                        <source src="http://s.immusician.com/static/videos/teachers.mp4" type="video/mp4">
+                    </video>
+                    <div class="vd-cover">
+                        <img class="phone" src="images/phone01@1x.png" srcset="images/phone01@2x.png 2x, images/phone01@3x.png 3x" alt=""/>
+                        <a href="javascript:void(0);" class="icon-play"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="link" data-id="1">
+                <h3>严选名师在线一对一</h3>
+                <p>AI音乐学院聚集了一批专业的吉他、尤克里里教师，一对一教学、细致讲解，随时解答疑问，让你享受最专业的学习体验！</p>
+                <div class="video-box">
+                    <video controls="controls" class="vd" id="vd-1">
+                        <source src="http://s.immusician.com/static/videos/teachers.mp4" type="video/mp4">
+                    </video>
+                    <div class="vd-cover">
+                        <img class="phone" src="images/phone02@1x.png" srcset="images/phone02@2x.png 2x, images/phone02@3x.png 3x" alt=""/>
+                        <a href="javascript:void(0);" class="icon-play"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block b3">
+        <div class="inner">
+            <h3>零基础也能没关系</h3>
+            <p>AI音乐学院联合国内名师共同打造了一套完善的课程体系，覆盖技巧、乐理等多
+                维度知识点，从零基础入门到乐器达人，为你定制智能化学习路径</p>
+            <div class="chart-box">
+                <img src="images/chart@1x.png" srcset="images/chart@2x.png 2x, images/chart@3x.png 3x" alt=""/>
+            </div>
+        </div>
+    </div>
+    <div class="down-box">
+        <div class="icon-close"></div>
+        <a href="javascript:void(0);" class="logo-bottom">
+            <i class="icon-logo"></i>
+            <div class="logo-text">
+                <p>AI音乐学院</p>
+                <span>吉他、尤克里里零基础教学</span>
+            </div>
+        </a>
+        <a href="javascript:void(0);" class="btn-exp"></a>
+    </div>
+</div>
+<script>
+    $(function(){
+        var w = $(".video-box").width();
+        var h = w * 0.52;
+        $(".vd").css({"width": w + "px", "height": h + "px"})
+        $(".icon-play").on("click", function () {
+            var that = $(this);
+            that.parents(".vd-cover").hide();
+            var vd = $(this).parents(".link").attr("data-id");
+            document.querySelector("#vd-" + vd).play();
+            document.querySelector("#vd-" + vd).addEventListener("ended", function () {
+                that.parents(".vd-cover").show();
+            })
+        })
+        $(".icon-close").on("click",function(){
+            $(".down-box").hide()
+            $(".wrap").removeClass('wrap-bottom')
+        })
+    })
+</script>
+</body>
+</html>
